@@ -1,0 +1,13 @@
+<nav class="container space-between">
+	<div class="container">
+		<button
+			*ngFor="let link of navigationLinks"
+			mat-button
+			[routerLink]="link.url"
+			[routerLinkActive]="'active'"
+			[routerLinkActiveOptions]="{ exact: true }"
+		>
+			{{ link.title }}
+		</button>
+	</div>
+</nav>

@@ -1,0 +1,79 @@
+@import '../../../../variables.scss';
+
+.flex-container {
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	justify-content: space-between;
+	height: 100vh;
+	padding: 20px;
+	padding-right: 40px;
+}
+
+button {
+    border-radius: 24px;
+    margin: 5px 12px;
+    text-align: center;
+    width: 100px;
+}
+
+mat-sidenav {
+	position: fixed;
+}
+
+.small-screen {
+	display: none;
+}
+
+.toggle-button {
+	height: 30px;
+	width: 30px;
+}
+
+mat-drawer-container {
+	height: 100vh;
+}
+
+@media screen and (max-width: 600px) {
+	.big-screen {
+		display: none;
+	}
+
+	.small-screen {
+		display: flex;
+	}
+
+	mat-drawer {
+		background-color: $purple;
+		border-radius: 24px 0px 0px 0px;
+	}
+
+	.menu {
+		margin: 25px;
+	}
+
+	.cross {
+		margin: 10px;
+		font-size: 15px;
+	}
+
+	.space-between {
+		justify-content: space-between;
+	}
+
+	.right {
+		float: right;
+	}
+
+	app-logo {
+		margin: 20px;
+	}
+
+	.close {
+		padding: 3px 2px 2px 2px;
+		height: 15px;
+		width: 15px;
+		border: 3px solid #ffffff;
+		border-radius: 50%;
+	}
+}

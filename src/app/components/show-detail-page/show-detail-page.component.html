@@ -1,0 +1,45 @@
+<div *ngIf="show$ | async as showResponse; else spinnerTemplate">
+	<mat-card>
+		<mat-card-content>
+			<div *ngIf="showResponse.show !== undefined && showResponse.show !== null">
+				<div>
+					<img [src]="showResponse.show.image_url" alt="{{ showResponse.show.title }}" />
+				</div>
+				<div class="text container show-container">
+					<div class="container column item">
+						<h2 *ngIf="!err; else noShow">{{ showResponse.show.title }}</h2>
+						<div class="container row" style="margin-bottom: 10px">
+							<mat-icon>star</mat-icon>
+							<p class="rating">{{ showResponse.show.average_rating }}/5</p>
+						</div>
+					</div>
+
+					<p class="item">{{ showResponse.show.description }}</p>
+				</div>
+			</div>
+		</mat-card-content>
+	</mat-card>
+
+	<ng-container *ngIf="reviews$ | async as response">
+		<app-review-form
+			[reviews]="response.reviews"
+			(post)="postReview($event)"
+			(delete)="deleteReview($event)"
+		></app-review-form>
+	</ng-container>
+</div>
+
+<ng-template #noShow>
+	<h1>{{ err }}</h1>
+</ng-template>
+
+<ng-template #spinnerTemplate>
+	<mat-spinner *ngIf="!failed"></mat-spinner>
+</ng-template>
+
+<div *ngIf="failed" class="container column">
+	<h1>Failed to load show.</h1>
+	<button mat-fab (click)="reload()">
+		<mat-icon>refresh</mat-icon>
+	</button>
+</div>

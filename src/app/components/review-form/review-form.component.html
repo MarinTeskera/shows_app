@@ -1,0 +1,29 @@
+<div class="container main width-80">
+	<span>Reviews</span>
+
+	<div class="container column item">
+		<ng-container *ngIf="form" [formGroup]="form">
+			<div class="container column">
+				<mat-form-field appearance="outline" warn="error" hideRequiredMarker>
+					<mat-label>Enter review</mat-label>
+					<input matInput type="text" formControlName="comment" />
+				</mat-form-field>
+
+				<div class="container row space-between">
+					<div stars>
+						<mat-icon class="star" *ngFor="let i of [1, 2, 3, 4, 5]" (click)="onStarClick(i)">
+							<ng-container *ngIf="i <= score"> star </ng-container>
+							<ng-container *ngIf="i > score"> star_border </ng-container>
+						</mat-icon>
+					</div>
+
+					<button mat-raised-button (click)="onPostClick()" [disabled]="form.invalid" class="post">
+						POST
+					</button>
+				</div>
+			</div>
+		</ng-container>
+
+		<app-review-list [reviews]="reviews" (delete)="onDelete($event)"></app-review-list>
+	</div>
+</div>

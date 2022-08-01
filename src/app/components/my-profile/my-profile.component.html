@@ -1,0 +1,12 @@
+<ng-container *ngIf="user$ | async as response" [formGroup]="form">
+	<div class="container space-evenly">
+		<div class="container">
+			<h3>EMAIL</h3>
+			<span>{{ response.user.email }}</span>
+		</div>
+
+		<img *ngIf="currentImage" [src]="currentImage" alt="" />
+
+		<app-file-input [userImage]="response.user.image_url" (upload)="reload()"></app-file-input>
+	</div>
+</ng-container>

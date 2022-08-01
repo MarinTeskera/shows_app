@@ -1,0 +1,29 @@
+<mat-card *ngIf="review" class="review-card">
+	<ng-container *ngIf="review.user.id === currentUserId">
+		<mat-icon [matMenuTriggerFor]="menu" class="right">more_vert</mat-icon>
+		<mat-menu #menu="matMenu">
+			<button mat-menu-item>Edit</button>
+			<button mat-menu-item (click)="onDeleteClick()">Delete</button>
+		</mat-menu>
+	</ng-container>
+
+	<div class="container user">
+		<div class="item1">
+			<div class="container row">
+				<img *ngIf="review.user.image_url; else placeholder" src="{{ review.user.image_url }}" alt="" />
+				<ng-template #placeholder>
+					<img src="https://placehold.jp/40x40.png" alt="" />
+				</ng-template>
+				<div class="container column">
+					<span>{{ review.user.email }}</span>
+					<div>
+						<span class="rating">{{ review.rating }}/5</span>
+						<app-stars [numberOfStars]="review.rating"> </app-stars>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<p class="item2">{{ review.comment }}</p>
+	</div>
+</mat-card>

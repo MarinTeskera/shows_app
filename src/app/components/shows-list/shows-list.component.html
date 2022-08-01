@@ -1,0 +1,14 @@
+<div *ngIf="shows">
+	<ul>
+		<li *ngFor="let show of shows">
+			<a>
+				<app-show-card
+					[title]="show.title"
+					[average_rating]="show.average_rating"
+					[image_url]="show.image_url"
+					[id]="show.id"
+				></app-show-card>
+			</a>
+		</li>
+	</ul>
+</div>

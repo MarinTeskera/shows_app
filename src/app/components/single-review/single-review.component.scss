@@ -1,0 +1,78 @@
+@import '../../../variables.scss';
+
+img {
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin: 5px 10px;
+}
+
+p {
+	margin: 10px 10px;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	align-items: left;
+	justify-content: left;
+}
+
+.row .user {
+	flex-direction: row;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.item1 {
+	min-width: 50%;
+}
+
+.item2 {
+	width: 100%;
+}
+
+.rating {
+	margin: 0px;
+	padding-top: 3px;
+	padding-right: 7px;
+	font-size: 18px;
+}
+
+mat-card {
+	border-radius: 24px;
+	overflow: hidden;
+	margin: 0 auto;
+	color: #ffffff;
+	padding: 0px;
+	width: 100%;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	background-color: $purple;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.right {
+	float: right;
+}
+
+mat-menu {
+	border-radius: 24px;
+	background: #ffffff;
+	color: $purple;
+}
+
+@media screen and (max-width: 600px) {
+	.item1 {
+		width: 100%;
+	}
+
+	.user {
+		flex-direction: column;
+	}
+}
+	

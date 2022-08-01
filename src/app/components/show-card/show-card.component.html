@@ -1,0 +1,35 @@
+<mat-card>
+	<a [routerLink]="'/show/' + id">
+		<img
+			*ngIf="image_url; else noImage"
+			mat-card-image
+			src="{{ image_url }}"
+			alt="{{ title }}"
+			mat-card-image
+			class="show-img"
+		/>
+		<ng-template #noImage>
+			<img
+				mat-card-image
+				src="https://via.placeholder.com/240x300?text=No+image+for+this+show"
+				alt="{{ title }}"
+				class="show-img"
+			/>
+		</ng-template>
+	</a>
+
+	<mat-card-footer>
+		<div class="container" *ngIf="average_rating; else noRating">
+			<h3>
+				{{ title }}
+			</h3>
+			<div class="rating" style="min-width: 60px">
+				<mat-icon class="star">star</mat-icon>
+				{{ average_rating }}/5
+			</div>
+		</div>
+		<ng-template #noRating>
+			<h3>No reviews for this show</h3>
+		</ng-template>
+	</mat-card-footer>
+</mat-card>

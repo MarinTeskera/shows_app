@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/javascript" src="index.js"></style>
+</head>
+<body>
+    <div class="page">
+        <h1 class="title">TV shows APP</h1>
+
+        <div class="show">
+            <img src="Peaky-Blinders-Cast-and-Character-Guide.avif" class="showImage">
+            <h2 class="showText">Peaky Blinders</h2>
+            <p class="showText">Tommy Shelby, a dangerous man, leads the Peaky Blinders, 
+                a gang based in Birmingham. Soon, Chester Campbell, an inspector, 
+                decides to nab him and put an end to the criminal activities.</p>
+            <p id="avg-score" class="showText"></p>
+        </div>
+
+        <h2>Reviews</h2>
+
+        <input type="text" placeholder="Add review" class="review-input" id="review-text">
+        <span>Rating</span>
+        <input type="image" src="grayStar.png" class="star-style" id="star-1">
+        <input type="image" src="grayStar.png" class="star-style" id="star-2">
+        <input type="image" src="grayStar.png" class="star-style" id="star-3">
+        <input type="image" src="grayStar.png" class="star-style" id="star-4">
+        <input type="image" src="grayStar.png" class="star-style" id="star-5">
+        
+        <br>
+
+        <button type="button" class="button" id="post-button">Post</button><br>
+
+        <ul id="review-list"></ul>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

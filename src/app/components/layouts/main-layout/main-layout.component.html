@@ -1,0 +1,32 @@
+<mat-drawer-container>
+	<mat-drawer
+		#sidenav
+		[opened]="currentScreenSize === 'XSmall' ? false : true"
+		[mode]="currentScreenSize === 'XSmall' ? 'over' : 'side'"
+		[position]="currentScreenSize === 'XSmall' ? 'end' : 'start'"
+	>
+		<mat-icon *ngIf="currentScreenSize === 'XSmall'" class="right cross close" (click)="sidenav.toggle()"
+			>close</mat-icon
+		>
+		<div class="flex-container">
+			<div>
+				<h1 *ngIf="currentScreenSize !== 'XSmall'">
+					<app-logo></app-logo>
+				</h1>
+				<app-navigation *ngIf="currentScreenSize === 'XSmall'" (click)="sidenav.toggle()"></app-navigation>
+				<app-navigation *ngIf="currentScreenSize !== 'XSmall'"></app-navigation>
+			</div>
+			<button mat-button (click)="onLogOutClick()">Log out</button>
+		</div>
+	</mat-drawer>
+
+	<mat-drawer-content>
+		<div class="small-screen space-between">
+			<app-logo></app-logo>
+
+			<mat-icon class="menu" (click)="sidenav.toggle()">menu</mat-icon>
+		</div>
+
+		<router-outlet></router-outlet>
+	</mat-drawer-content>
+</mat-drawer-container>

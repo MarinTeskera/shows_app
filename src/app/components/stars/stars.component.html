@@ -1,0 +1,10 @@
+<span *ngFor="let i of [1, 2, 3, 4, 5]">
+	<mat-icon *ngIf="i <= numberOfStars" class="icon">star</mat-icon>
+	<!-- <ng-template #halfStar>
+		<mat-icon *ngIf="i - numberOfStars <= 0.5; else grayStar" class="icon">star_half</mat-icon>
+	</ng-template>
+
+	<ng-template #grayStar>
+		<mat-icon class="icon-gold">star_border</mat-icon>
+	</ng-template> -->
+</span>

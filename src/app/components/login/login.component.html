@@ -1,0 +1,28 @@
+<form *ngIf="!sent">
+	<ng-container *ngIf="form" [formGroup]="form">
+		<div class="card centered-container">
+			<app-logo></app-logo>
+
+			<div class="centered-container">
+				<mat-form-field appearance="outline" warn="error" hideRequiredMarker>
+					<mat-icon matPrefix>person</mat-icon>
+					<mat-label>Email </mat-label>
+					<input type="email" placeholder="Enter email" matInput formControlName="email" />
+				</mat-form-field>
+
+				<mat-form-field mat-form-field-appearance-outline appearance="outline" hideRequiredMarker>
+					<mat-icon matPrefix>lock</mat-icon>
+					<mat-label>Password </mat-label>
+					<input type="password" placeholder="Enter password" matInput formControlName="password" />
+				</mat-form-field>
+			</div>
+
+			<button mat-raised-button mat-primary class="round-button mat-primary" (click)="onLoginClick($event)">
+				Log in
+			</button>
+			<a [routerLink]="'/register'">Don't have an account? <b>Register</b></a>
+		</div>
+	</ng-container>
+</form>
+
+<mat-spinner *ngIf="sent"></mat-spinner>

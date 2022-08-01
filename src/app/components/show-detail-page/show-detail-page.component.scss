@@ -1,0 +1,71 @@
+@import '../../../variables.scss';
+
+mat-card {
+	border-radius: 24px;
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 0px;
+	width: 80%;
+	margin-top: 30px;
+	margin-bottom: 60px;
+	background-color: #ffffff;
+	color: $purple;
+}
+
+mat-spinner {
+	margin: 0 auto;
+}
+
+img {
+	width: 100%;
+	height: 60vh;
+	object-fit: cover;
+}
+
+app-review-form {
+	width: 80%;
+}
+
+.rating {
+	margin: 0px;
+	padding-top: 3px;
+	padding-right: 7px;
+	font-size: 18px;
+}
+
+.text {
+	padding: 30px;
+}
+
+.review-card {
+	padding: 10px;
+}
+
+.container {
+	display: flex;
+	align-items: left;
+	justify-content: left;
+}
+
+.row .show-container {
+	flex-direction: row;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.item {
+	width: 100%;
+	align-self: center;
+}
+
+button {
+	color: $purple;
+}
+
+@media screen and (max-width: 600px) {
+	.show-container {
+		flex-direction: column;
+	}
+}

@@ -1,0 +1,12 @@
+<app-shows-list *ngIf="response$ | async as response; else spinnerTemplate" [shows]="response.shows"></app-shows-list>
+
+<ng-template #spinnerTemplate>
+	<mat-spinner *ngIf="!failed"></mat-spinner>
+</ng-template>
+
+<div *ngIf="failed" class="flex-container">
+	<h1>Failed to load shows.</h1>
+	<button mat-fab (click)="reload()">
+		<mat-icon>refresh</mat-icon>
+	</button>
+</div>

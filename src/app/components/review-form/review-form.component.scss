@@ -1,0 +1,73 @@
+@import '../../../variables.scss';
+
+.container {
+	display: flex;
+	align-items: left;
+	justify-content: left;
+}
+
+.width-80 {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.row .main {
+	flex-direction: row;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.item {
+	width: 100%;
+}
+
+mat-form-field {
+	background-color: #ffffff;
+	border-radius: 28px;
+	margin: 10px;
+}
+
+:host ::ng-deep .mat-form-field-wrapper {
+	margin: 0 !important;
+	padding: 0;
+}
+
+mat-label {
+	color: $light-purple;
+}
+
+.space-between {
+	justify-content: space-between;
+}
+
+mat-icon-button {
+	color: transparent;
+	background-color: $purple;
+	padding: 0;
+}
+
+button {
+	border-radius: 24px;
+	padding: 0 10px;
+	margin: 15px;
+}
+
+input {
+	color: black;
+}
+
+.star {
+	margin: 20px 0;
+}
+
+.post {
+	color: $purple;
+}
+
+@media screen and (max-width: 600px) {
+	.main {
+		flex-direction: column;
+	}
+}
